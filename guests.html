@@ -1,10 +1,52 @@
+<html>
+    <head>
+        <title>Guests</title>
+        <script language="Javascript">
+            function showform(dowhat){
+                if (dowhat == 'insert'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'block';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+                else if (dowhat == 'update'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'block';
+                    document.getElementById('delete').style.display = 'none';
+                }
+                else if (dowhat == 'delete'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'block';
+                }
+                else {
+                    document.getElementById('browse').style.display = 'block';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+            }
+            
+            function newGuest() { showform('insert');}
+            function updateGuest(gid) { showform('update');}
+            function deleteGuest(gid) { showform('delete');}
+            function browseGuests() { showform('browse');}
+        </script>
+    </head>
+
+
+<body>
 <h1>Guests</h1>
 
 [ <a href="index.html">Home Page</a> |
 <a href="guests.html">Guests</a> |
 <a href="rentals.html">Rentals</a> |
+<a href="rental_types.html">Rental Types</a> |
 <a href="employees.html">Employees</a> |
-<a href="bookings.html">Bookings</a> ]
+<a href="bookings.html">Bookings</a> |
+<a href="bookings_guests.html">Guests Bookings</a> ]
 
 
 <div id="browse" style="display: block">
@@ -56,7 +98,7 @@
 
 
 <p>&nbsp;</p>
-<div id="insert">
+<div id="insert" style="display:none">
     <form method="POST" id="addGuest">
         <legend><strong>Add Guest</strong></legend>
             <fieldset class="fields">
@@ -68,15 +110,15 @@
             </fieldset> 
         <fieldset>
             <input class="btn" type="submit" id="addGuest" value="Add Guest">
-            <input class="btn" type="button" value="cancel" onClick="browsePeople()">
+            <input class="btn" type="button" value="cancel" onClick="browseGuests()">
         </fieldset>
     </form>
 </div>
 
 
 <p>&nbsp;</p>
-<div id="update">
-    <form method="POST" id="UpdateGuest">
+<div id="update" style="display:none">
+    <form method="POST" id="updateGuest">
         <legend><strong>Update Guest</strong></legend>
             <fieldset class="fields">
             <input type="hidden" name="guestID" id="updateguestID" >
@@ -89,13 +131,13 @@
             </fieldset> 
         <fieldset>
             <input class="btn" type="submit" id="addGuest" value="Update Guest">
-            <input class="btn" type="button" value="cancel" onClick="browsePeople()">
+            <input class="btn" type="button" value="cancel" onClick="browseGuests()">
         </fieldset>
     </form>
 </div>
 
 <p>&nbsp;</p>
-<div id="delete" style="display: block">
+<div id="delete" style="display:none">
     <form id="deleteGuest">
         <legend><strong>Delete Guest</strong></legend>
             <fieldset class="fields">
@@ -106,8 +148,10 @@
             </fieldset> 
         <fieldset>
             <input class="btn" type="submit" id="deleteGuest" value="Delete">
-            <input class="btn" type="button" value="cancel" onClick="browsePeople()">
+            <input class="btn" type="button" value="cancel" onClick="browseGuests()">
         </fieldset>
     </form>
 </div>
 
+</body>
+</html>
