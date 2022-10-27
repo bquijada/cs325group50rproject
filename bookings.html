@@ -1,0 +1,73 @@
+<h1>Bookings</h1>
+
+[ <a href="index.html">Home Page</a> |
+<a href="guests.html">Guests</a> |
+<a href="rentals.html">Rentals</a> |
+<a href="employees.html">Employees</a> |
+<a href="bookings.html">Bookings</a> ]
+
+<div id="browse" style="display: block">
+    <p><strong>Browse Bookings</strong></p>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>id</th>
+            <th>number of guests</th>
+            <th>rental id</th>
+            <th>check in</th>
+            <th>check out</th>
+            <th>total cost</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>4</td>
+            <td>1</td>
+            <td>2020-11-19</td>
+            <td>2020-11-27</td>
+            <td>640</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>4</td>
+            <td>3</td>
+            <td>2020-06-15</td>
+            <td>2020-06-19</td>
+            <td>320</td> 
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>6</td>
+            <td>9</td>
+            <td>2021-1-16</td>
+            <td>2021-1-22</td>
+            <td>90</td>
+        </tr>
+        </table>
+    </div>
+
+
+    <p>&nbsp;</p>
+    <div id="insert">
+        <form method="POST" id="addBooking">
+            <legend><strong>Add Booking</strong></legend>
+                <fieldset class="fields">
+                    <label> number of guests </label> <input type="text" name="fname">
+                    <label> rental id </label> <select name="rental type id">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                        <option value="3">5</option>
+                        </select>
+                    <label> check in </label> <input type="date" name="email">
+                    <label> check out </label> <input type="date" name="phone">
+                    <label> total cost </label> <input type="number" step="any" name="total cost">
+                </fieldset> 
+            <fieldset>
+                <input class="btn" type="submit" id="addBooking" value="Add Booking">
+                <input class="btn" type="button" value="cancel" onClick="browseBookings()">
+            </fieldset>
+        </form>
+    </div>
+
+
+
