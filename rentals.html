@@ -1,10 +1,51 @@
+<html>
+    <head>
+        <title>Rentals</title>
+        <script language="Javascript">
+            function showform(dowhat){
+                if (dowhat == 'insert'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'block';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+                else if (dowhat == 'update'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'block';
+                    document.getElementById('delete').style.display = 'none';
+                }
+                else if (dowhat == 'delete'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'block';
+                }
+                else {
+                    document.getElementById('browse').style.display = 'block';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+            }
+            
+            function newRental() { showform('insert');}
+            function updateRental(gid) { showform('update');}
+            function deleteRental(gid) { showform('delete');}
+            function browseRentals() { showform('browse');}
+        </script>
+    </head>
+
+
 <h1>Rentals</h1>
 
 [ <a href="index.html">Home Page</a> |
 <a href="guests.html">Guests</a> |
 <a href="rentals.html">Rentals</a> |
+<a href="rental_types.html">Rental Types</a> |
 <a href="employees.html">Employees</a> |
-<a href="bookings.html">Bookings</a> ]
+<a href="bookings.html">Bookings</a> |
+<a href="bookings_guests.html">Guests Bookings</a> ]
 
 <div id="browse" style="display: block">
     <p><strong>Browse Rentals</strong></p>
@@ -61,7 +102,7 @@
 </div>
 
 <p>&nbsp;</p>
-<div id="insert">
+<div id="insert" style="display:none">
     <form method="POST" id="addRental">
         <legend><strong>Add Rental</strong></legend>
             <fieldset class="fields">
@@ -85,7 +126,7 @@
 </div>
 
 <p>&nbsp;</p>
-<div id="update">
+<div id="update" style="display:none">
     <form method="POST" id="UpdateRental">
         <legend><strong>Update Rental</strong></legend>
             <fieldset class="fields">
@@ -111,7 +152,7 @@
 </div>
 
 <p>&nbsp;</p>
-<div id="delete" style="display: block">
+<div id="delete" style="display:none">
     <form id="deleteRental">
         <legend><strong>Delete Rental</strong></legend>
             <fieldset class="fields">
@@ -127,7 +168,7 @@
     </form>
 </div>
 
-
-
+</body>
+</html>
  
     
